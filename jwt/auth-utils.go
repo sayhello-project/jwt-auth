@@ -96,6 +96,10 @@ func (a *Auth) setCredentialsOnResponseWriter(w http.ResponseWriter, c *credenti
 			setHeader(w, a.options.RefreshTokenName, refreshTokenString)
 		}
 	} else {
+		ss := http.SameSiteLaxMode
+		if a.options.IsDevEnv {
+			ss = http.SameSiteNoneMode
+		}
 		// tokens are in cookies
 		// note: don't use an "Expires" in auth cookies bc browsers won't send expired cookies?
 		authCookie := http.Cookie{
@@ -116,6 +120,7 @@ func (a *Auth) setCredentialsOnResponseWriter(w http.ResponseWriter, c *credenti
 				Path:     "/",
 				HttpOnly: true,
 				Secure:   !a.options.IsDevEnv,
+				SameSite: ss,
 			}
 			http.SetCookie(w, &refreshCookie)
 		}

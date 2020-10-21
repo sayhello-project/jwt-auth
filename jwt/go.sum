@@ -1,3 +1,6 @@
+github.com/adam-hanna/jwt-auth v1.2.0 h1:jQvh/4SMqkJQWb/WrCRCIZ5mONp11fGaUP2qh0NwRY8=
+github.com/adam-hanna/jwt-auth/jwt v0.0.0-20200415175153-285fbe765f4c h1:SstqtYWemDYyzN3Dt+yTnNRK4J3LeTvTDiyhupxM2UE=
+github.com/adam-hanna/jwt-auth/jwt v0.0.0-20200415175153-285fbe765f4c/go.mod h1:rRvtvEPnk302LsSfT7OXSrG+f5p91DmxUc2/BWP8Kow=
 github.com/adam-hanna/randomstrings v0.0.0-20160715001758-88fd7c52a2c7 h1:62HlqmZyGNiYN348/+z/q1Z6m/mHvKWlRzHBN6uq1CU=
 github.com/adam-hanna/randomstrings v0.0.0-20160715001758-88fd7c52a2c7/go.mod h1:Sv99nuALJEEt6XHy56tbVlXUJ2GvCgbNo99JuGpWafY=
 github.com/dgrijalva/jwt-go v3.0.1-0.20160617170158-f0777076321a+incompatible h1:C9jv2OiqKdyq7v3jUJb9E46AJfmH4q+V42q9kLUOarU=
