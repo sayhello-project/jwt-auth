@@ -27,6 +27,10 @@ type Auth struct {
 	checkTokenId       TokenIdChecker
 }
 
+type logger interface {
+	Log(args ...interface{})
+}
+
 // Options is a struct for specifying configuration options
 type Options struct {
 	SigningMethodString   string
@@ -42,6 +46,7 @@ type Options struct {
 	CSRFTokenName         string
 	Debug                 bool
 	IsDevEnv              bool
+	Logger                logger
 }
 
 const (

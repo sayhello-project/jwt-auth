@@ -1,4 +1,4 @@
-module github.com/adam-hanna/jwt-auth/jwt
+module github.com/sayhello-project/jwt-auth/jwt
 
 go 1.14
 

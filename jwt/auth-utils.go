@@ -166,7 +166,11 @@ func (a *Auth) buildCredentialsFromRequest(r *http.Request, c *credentials) *jwt
 
 func (a *Auth) myLog(stoofs interface{}) {
 	if a.options.Debug {
-		log.Println(stoofs)
+		if a.options.Logger != nil {
+			a.options.Logger.Log(stoofs)
+		} else {
+			log.Println(stoofs)
+		}
 	}
 }
 
