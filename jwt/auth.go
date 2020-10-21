@@ -47,6 +47,8 @@ type Options struct {
 	Debug                 bool
 	IsDevEnv              bool
 	Logger                logger
+	SameSite              http.SameSite
+	Secure                bool
 }
 
 const (
@@ -124,6 +126,10 @@ func New(auth *Auth, o Options) error {
 
 	if o.CSRFTokenName == "" {
 		o.CSRFTokenName = defaultCSRFTokenName
+	}
+
+	if o.SameSite == 0 {
+		o.SameSite = http.SameSiteNoneMode
 	}
 
 	// create the sign and verify keys
