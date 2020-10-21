@@ -109,6 +109,7 @@ func (a *Auth) setCredentialsOnResponseWriter(w http.ResponseWriter, c *credenti
 			// Expires:  time.Now().Add(a.options.AuthTokenValidTime),
 			HttpOnly: true,
 			Secure:   !a.options.IsDevEnv,
+			SameSite: ss,
 		}
 		http.SetCookie(w, &authCookie)
 
