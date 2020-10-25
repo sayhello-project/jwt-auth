@@ -92,10 +92,10 @@ func (a *Auth) buildCredentialsFromStrings(csrfString string, authTokenString st
 }
 
 func (c *credentials) validateCsrfStringAgainstCredentials() *jwtError {
-	authTokenClaims, ok := c.AuthToken.Token.Claims.(*ClaimsType)
-	if !ok {
-		return newJwtError(errors.New("Cannot read token claims"), 500)
-	}
+	// authTokenClaims, ok := c.AuthToken.Token.Claims.(*ClaimsType)
+	// if !ok {
+	// 	return newJwtError(errors.New("Cannot read token claims"), 500)
+	// }
 	// note @adam-hanna: check csrf in refresh token? Careful! These tokens are
 	// 									 coming from a request, and the csrf in the credential may have been
 	//								   updated!
@@ -103,9 +103,9 @@ func (c *credentials) validateCsrfStringAgainstCredentials() *jwtError {
 	// if !ok {
 	// 	return newJwtError(errors.New("Cannot read token claims"), 500)
 	// }
-	if c.CsrfString != authTokenClaims.Csrf {
-		return newJwtError(errors.New("CSRF token doesn't match value in jwts"), 401)
-	}
+	// if c.CsrfString != authTokenClaims.Csrf {
+	// 	return newJwtError(errors.New("CSRF token doesn't match value in jwts"), 401)
+	// }
 
 	return nil
 }
